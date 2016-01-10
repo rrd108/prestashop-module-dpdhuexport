@@ -30,7 +30,7 @@
 
 			<label>{l s='From' mod='dpdhuexport'}: </label>
 			<div class="margin-form">
-				<input type="number" value="{$number_from}" name="number_from" size="8">
+				<input type="number" value="{$number_from|escape:'htmlall':'UTF-8'}" name="number_from" size="8">
 				<sup>*</sup>
 			</div>
 
@@ -38,7 +38,7 @@
 
 			<label>{l s='To' mod='dpdhuexport'}: </label>
 			<div class="margin-form">
-				<input type="number" value="{$number_to}"  name="number_to" size="8">
+				<input type="number" value="{$number_to|escape:'htmlall':'UTF-8'}"  name="number_to" size="8">
 				<sup>*</sup>
 			</div>
 
