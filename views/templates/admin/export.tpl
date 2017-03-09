@@ -1,5 +1,5 @@
 {*
-* 2016 rrd
+* 2016 - 2017 rrd
 *
 * NOTICE OF LICENSE
 *
@@ -17,9 +17,9 @@
 * without the permission of the author
 *
 * @author    rrd <rrd@webmania.cc>
-* @copyright 2016 rrd
+* @copyright 2016 - 2017 rrd
 * @license   http://www.gnu.org/licenses/gpl-3.0.html  GNU GENERAL PUBLIC LICENSE (GPL V3.0)
-* @version   0.0.1
+* @version   0.0.2
 *
 *}
 
@@ -28,18 +28,17 @@
 		<fieldset>
 			<legend>{l s='CSV export by order number' mod='dpdhuexport'}</legend>
 
-			<label>{l s='From' mod='dpdhuexport'}: </label>
+			<label>{l s='From' mod='dpdhuexport'}: </label><sup>*</sup>
 			<div class="margin-form">
-				<input type="number" value="{$number_from|escape:'htmlall':'UTF-8'}" name="number_from" size="8">
-				<sup>*</sup>
+				<input type="text" value="{$number_from}" name="number_from" size="8">
 			</div>
+			<sup>{l s='You also can list any order numbers separated by commas' mod='dpdhuexport'}</sup>
 
 			<div class="clear"></div>
 
-			<label>{l s='To' mod='dpdhuexport'}: </label>
+			<label>{l s='To' mod='dpdhuexport'}: </label><sup>*</sup>
 			<div class="margin-form">
-				<input type="number" value="{$number_to|escape:'htmlall':'UTF-8'}"  name="number_to" size="8">
-				<sup>*</sup>
+				<input type="text" value="{$number_to}"  name="number_to" size="8">
 			</div>
 
 			<div class="clear"></div>
