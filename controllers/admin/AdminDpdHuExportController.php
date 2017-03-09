@@ -44,7 +44,7 @@ class AdminDpdHuExportController extends ModuleAdminController
 	public function init()
     {
         $this->number_from = Tools::getValue('number_from') ? Tools::getValue('number_from') : false;
-        $this->number_to = Tools::getValue('number_to') ? Tools::getValue('number_to') : false;
+        $this->number_to = Tools::getValue('number_to') ? Tools::getValue('number_to') : Tools::getValue('number_from');
         if ($this->number_to && $this->number_from > $this->number_to) {
             $_n = $this->number_from;
             $this->number_from = $this->number_to;
@@ -75,9 +75,9 @@ class AdminDpdHuExportController extends ModuleAdminController
 	{
 		if (Tools::isSubmit('submitOrderNumber'))
 		{
-            if (Validate::isString($this->number_from)) {
+            if (Validate::isString($this->number_from) && !Validate::isInt($this->number_from)) {
                 if (!strpos($this->number_from, ',')) {
-                    $this->errors[] = $this->l('Invalid "From" number');
+                    $this->errors[] = $this->l('Invalid "From" numbers list');
                 }
             } else {
                 if (!Validate::isInt($this->number_from)) {
